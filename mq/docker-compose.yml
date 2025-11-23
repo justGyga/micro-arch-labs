@@ -1,0 +1,17 @@
+services:
+  mq:
+    image: rabbitmq:management-alpine
+    container_name: mq
+    restart: always
+    ports:
+      - "${MQ_PORT}:5672"
+      - "${MQ_ADMIN_PORT}:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${MQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${MQ_PASS}
+    networks:
+      - labs-net
+
+networks:
+  labs-net:
+    external: true

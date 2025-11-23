@@ -1,13 +1,13 @@
 services:
-  service-2:
-    container_name: service-2
+  mq-listener:
+    container_name: mq-listener
+    env_file:
+      - .env
     build:
       context: .
       dockerfile: Dockerfile
     command: sh -c "npm run start"
     restart: always
-    ports:
-      - "3001:3001"
     networks:
       - labs-net
 
