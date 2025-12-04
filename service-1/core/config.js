@@ -15,7 +15,7 @@ export class Config {
 
   static getOrThrow(key, cb) {
     const value = process.env[key];
-    if (!value) throw Error("Env not exists");
+    if (!value) throw Error(`Env "${key}" not exists`);
 
     if (!cb) return value;
 

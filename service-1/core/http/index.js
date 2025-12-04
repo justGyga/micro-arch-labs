@@ -1,5 +1,7 @@
 import express from "express";
 import { createServer } from "node:http";
+import { logger } from "../logger/index.js";
+import { createRequestId, loggerMiddleware } from "./request-handlers.js";
 
 /**
  * @param {number} port
@@ -10,9 +12,14 @@ export const runHttp = async (port, routes = []) => {
   const server = createServer(app);
 
   app.use(express.json({ limit: "10mb" }));
+  app.use(createRequestId, loggerMiddleware);
 
   app.get("", (req, res) => {
-    console.log(`REQUEST IS HANDLED, QUERY ${JSON.stringify(req.query)}`);
+    logger.info({
+      message: "REQUEST IS HANDLED",
+      query: req.query,
+      requestId: res.locals.requestId,
+    });
     res.status(200).json(req.query);
   });
 

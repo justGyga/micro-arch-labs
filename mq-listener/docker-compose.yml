@@ -1,6 +1,8 @@
 services:
   mq-listener:
     container_name: mq-listener
+    environment:
+      - SERVICE_NAME=mq-listener
     env_file:
       - .env
     build:

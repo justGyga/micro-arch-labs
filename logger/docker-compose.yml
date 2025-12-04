@@ -1,0 +1,17 @@
+services:
+  logger:
+    image: logstash:9.2.2
+    container_name: logger
+    restart: always
+    networks:
+      - labs-net
+    ports:
+      - "5046:5046"
+      - "9600:9600"
+    volumes:
+      - ./config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
+      - ./config/pipelines:/usr/share/logstash/config/pipelines:ro
+
+networks:
+  labs-net:
+    external: true

@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
     command: sh -c "npm run start"
+    environment:
+      - SERVICE_NAME=service-1
     env_file:
       - .env
     restart: always
