@@ -7,8 +7,8 @@ echo "Build and start Logger"
 echo "Build and start service-1"
 (cd service-1 && cp ../.env ./.env && docker-compose --env-file .env up -d --build)
 
-echo "Build and start service-2"
-(cd service-2 && docker-compose up -d --build)
+echo "Build and start auth-service"
+(cd auth-service && docker-compose up -d --build)
 
 echo "Build and start mq listener"
 (cd mq-listener && cp ../.env ./.env && docker-compose --env-file .env up -d --build)

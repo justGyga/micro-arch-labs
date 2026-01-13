@@ -1,0 +1,45 @@
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start:dev": "nodemon -e ts -r dotenv/config --exec tsx .",
+    "start:prod": "node dist/src/index.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autobind-decorator": "^2.4.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "generate-api-key": "^1.0.2",
+    "reflect-metadata": "^0.2.2",
+    "socket.io": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.21",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.1",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.28",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^8.48.1",
+    "@typescript-eslint/parser": "^8.48.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-prettier": "^5.5.4",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.0.0",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

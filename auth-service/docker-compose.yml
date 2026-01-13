@@ -1,13 +1,17 @@
 services:
-  service-2:
-    container_name: service-2
+  service-1:
+    container_name: service-1
     build:
       context: .
       dockerfile: Dockerfile
     command: sh -c "npm run start"
+    environment:
+      - SERVICE_NAME=service-1
+    env_file:
+      - .env
     restart: always
     ports:
-      - "3001:3001"
+      - "3000:3000"
     networks:
       - labs-net
 

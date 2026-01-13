@@ -1,0 +1,15 @@
+node_modules
+.git
+.gitignore
+.github
+README.md
+Dockerfile
+.dockerfile
+docker-compose.yml
+prod.docker-compose.yml
+dev.docker-compose.yml
+.env
+.env.prod
+.env.dev
+.eslintrc.cjs
+.prettierrc
